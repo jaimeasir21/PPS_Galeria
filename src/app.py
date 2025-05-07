@@ -12,8 +12,9 @@ def homepage():
     the_time = datetime.now().strftime("%A, %d %b %Y %H:%M")
 
     # Render HTML with variable
-    return render_template("index.html", the_time=the_time, tema="dog", 
+    return render_template("index.html", the_time=the_time, tema="dog",
                            alto="600", ancho="920")
+
 
 @app.route('/status')
 def status():
