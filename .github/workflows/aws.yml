@@ -1,0 +1,30 @@
+name: remote ssh command
+
+
+env:
+  IMAGE_NAME: angoies/galeria
+  # FILES: compose.yml
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+
+jobs:
+  deploy:
+    name: deploy en AWS
+    runs-on: ubuntu-latest
+    steps:
+      - name: multiple command
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AWS_HOSTNAME }}
+          username: ${{ secrets.AWS_USERNAME }}
+          key: ${{ secrets.AWS_PRIVATEKEY }}
+          port: 22 # ${{ secrets.PORT }}
+          script: |
+            docker rm -f web1
+            docker rmi ${{ env.IMAGE_NAME }}
+            docker run -d -p 80:5000 --name web1 ${{ env.IMAGE_NAME }}
