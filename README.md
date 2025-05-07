@@ -8,7 +8,7 @@ $ python3 -m venv venv
 $ source venv/bin/activate
 (venv) $ pip install -r requirements.txt 
 ```
-- Lanzar la aplicación en local (por defecto puerto 5000)
+- Lanzar la aplicación en local (por defecto puerto 5000) s
 
     ```console
     (venv) $ python src/app.py 
