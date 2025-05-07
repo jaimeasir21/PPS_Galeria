@@ -2,7 +2,7 @@
 
 Aplicación de ejemplo para usar en práctica Deploy de contenedor Docker en EC2 AWS.
 
-- Crear entrono virtual e Instalar dependencias
+- Crear entorno virtual e Instalar dependencias
 ```
 $ python3 -m venv venv
 $ source venv/bin/activate
